@@ -1,0 +1,44 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCIE = [
+  {
+    date: "Actualmente...",
+    title: "Freelancer",
+    company: "Independiente",
+    description:
+      "Trabajo de manera independiente en varios proyectos de programación y desarrollo web.",
+    link: "https://github.com/facu1391",
+  },
+  {
+    date: "Marzo - Abril 2023",
+    title: "Fullstack",
+    company: "Independiente",
+    description:
+      "Desarrollé una aplicación de administración de pacientes de veterinaria como un proyecto personal. Utilicé React para el frontend, Tailwind CSS para el diseño, y Node, Express y MongoDB para el backend. Esta aplicación es un testimonio de mis habilidades como desarrollador Fullstack.",
+  },
+  {
+    date: "Diciembre 2023 - Marzo 2024",
+    title: "Frontend",
+    company: "ClinchHR",
+    description:
+      "Luego de completar un curso en Coder House, tuve la oportunidad de trabajar en un proyecto real. Fui presentado a un cliente llamado ClinchHR y trabajé en un equipo para desarrollar una Leadpages para ellos. Mi rol en el equipo fue como Frontend, contribuyendo al éxito del proyecto.",
+  },
+  {
+    date: "Febrero - Marzo 2024",
+    title: "Principal Frontend",
+    company: "No Country",
+    description:
+      "Fui seleccionado por No Country para una simulación laboral, donde me asignaron a un equipo de trabajo. En un plazo de solo 5 semanas, desarrollamos una aplicación llamada ChatBeat. En este equipo, y fui el Principal Frontend.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCIE.map((experiencie) => (
+      <li class="">
+        <ExperienceItem {...experiencie} />
+      </li>
+    ))
+  }
+</ol>

@@ -4,13 +4,13 @@ import ExpressJs from "./icons/Express.astro"
 import NodeJs from "./icons/Node.astro"
 import MongoDb from "./icons/Mongo.astro"
 import Mysql from "./icons/Mysql.astro"
-import Tailwind from "./icons/Tailwind.astro"
 import CSSNa from "./icons/CSS.astro"
 import ReactJs from "./icons/React.astro"
 import ViteJs from "./icons/Vite.astro"
 import JavaBack from "./icons/Java.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
+import Laravel from "./icons/Laravel.astro"
 
 const TAGS = {
   REACT: {
@@ -48,33 +48,24 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: ViteJs,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
-  },
   CSS: {
     name: "CSS",
     class: "bg-[#003159] text-white",
     icon: CSSNa,
   },
+  LARAVEL: {
+    name: "LARAVEL",
+    class: "bg-[#003159] text-white",
+    icon: Laravel,
+  }
 }
 const PROJECTS = [
-  {
-    title: "APP - ADMINISTRACION DE PACIENTES",
-    description:
-      "La motivación detrás de la construcción de la aplicación de administración de pacientes fue crear una herramienta eficiente y accesible para mejorar la gestión y atención de los pacientes en entornos médicos.",
-    link: "https://mern-app-frontend-nu.vercel.app/",
-    github: "https://github.com/facu1391/MERN_APP_frontend",
-    image: "foto1.png",
-    tags: [TAGS.REACT,TAGS.EXPRESS ,TAGS.MONGO ,TAGS.TAILWIND],
-  },
   {
     title: "Leadpages - ClinchHR",
     description:
       "Es una plataforma informativa diseñada para proporcionar a los clientes una visión completa de su empresa. Aquí, los visitantes encontrarán detalles exhaustivos sobre la empresa, sus servicios, productos, valores fundamentales y otros aspectos relevantes.",
-    link: "",
-    github: "",
+    link: "https://www.hireclinch.com/",
+    github: "https://github.com/facu1391/Clinch?tab=readme-ov-file",
     image: "foto2.png",
     tags: [TAGS.REACT,TAGS.VITE, TAGS.CSS],
   },
@@ -85,7 +76,25 @@ const PROJECTS = [
     link: "https://chatbeat-nocountry.web.app/",
     github: "https://github.com/No-Country/c16-32-m-java",
     image: "foto3.png",
-    tags: [TAGS.REACT,TAGS.VITE,TAGS.JAVA ,TAGS.MYSQL,TAGS.CSS],
+    tags: [TAGS.REACT,TAGS.VITE,TAGS.JAVA ,TAGS.MYSQL],
+  },
+  {
+    title: "Entrena Conmigo",
+    description:
+      "Entrena Conmigo es una web app que surge del deseo de incorporar el hábito del ejercico en casa. Y su principal objetivo es ayudar a personas principiantes a superarse día a día según sus objetivos. Entrena Conmigo está pensado para todo tipo de usuarios pero principalmente para aquellos que no disponen de tiempo, son su primeros pasos o no saben como dar su primer paso en esta aventura de superación y hábitos para la salud física.",
+    link: "",
+    github: "https://github.com/No-Country/s14-33-php",
+    image: "foto4.png",
+    tags: [TAGS.REACT,TAGS.VITE,TAGS.MYSQL,TAGS.LARAVEL],
+  },
+  {
+    title: "APP - ADMINISTRACION DE PACIENTES",
+    description:
+      "La motivación detrás de la construcción de la aplicación de administración de pacientes fue crear una herramienta eficiente y accesible para mejorar la gestión y atención de los pacientes en entornos médicos.",
+    link: "https://mern-app-frontend-nu.vercel.app/",
+    github: "https://github.com/facu1391/MERN_APP_frontend",
+    image: "foto1.png",
+    tags: [TAGS.REACT,TAGS.EXPRESS ,TAGS.MONGO],
   },
  
 ]

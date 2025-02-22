@@ -11,8 +11,26 @@ import JavaBack from "./icons/Java.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 import Laravel from "./icons/Laravel.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Next from "./icons/Next.astro"
+import TypeScript from "./icons/TypeScript.astro"
 
 const TAGS = {
+  TypeScript:{
+    name: "TypeScript",
+    class: "bg-[#003159] text-white",
+    icon: TypeScript,
+  },
+  Next:{
+    name: "Next.js",
+    class: "bg-[#003159] text-white",
+    icon: Next,
+  },
+  Tailwind:{
+    name: "Tailwind",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
   REACT: {
     name: "React.js",
     class: "bg-black text-white",
@@ -60,6 +78,24 @@ const TAGS = {
   }
 }
 const PROJECTS = [
+ {
+    title: "App - Justina.io",
+    description:
+      "Plataforma integral para el sector salud que conecta a profesionales, pacientes, centros médicos, financiadores y proveedores. La app facilita el acceso a información médica, agendamiento de citas y coordinación de consultas, optimizando la gestión de historiales y la comunicación entre todos los actores del ecosistema. ",
+    link: "",
+    github: "",
+    image: "justina.1.png",
+    tags: [TAGS.REACT,TAGS.VITE, TAGS.Tailwind],
+  },
+  {
+    title: "Web - Satan&Co",
+    description:
+      "Plataforma informativa que presenta de forma integral la empresa y sus valores, al mismo tiempo que impulsa la visibilidad, maximiza la conversión de usuarios y optimiza el posicionamiento SEO. Con un enfoque en el sector del cannabis, la web destaca productos de calidad y fortalece su presencia digital.",
+    link: "https://www.satanycogenetics.com/Home",
+    github: "https://github.com/ProductDesignMeDev/satan-co",
+    image: "santan.png",
+    tags: [TAGS.Next,TAGS.TypeScript, TAGS.Tailwind],
+  },
   {
     title: "Leadpages - ClinchHR",
     description:
@@ -68,24 +104,6 @@ const PROJECTS = [
     github: "https://github.com/facu1391/Clinch?tab=readme-ov-file",
     image: "foto2.png",
     tags: [TAGS.REACT,TAGS.VITE, TAGS.CSS],
-  },
-  {
-    title: "CHATBEAT ♥ ♫♪♫ Conexión en sintonía. ♫♪♫ ♥",
-    description:
-      "ChatBeat es conectar a la gente a través de la música. Que la música sea un disparador para romper el hielo y conocerse más. Que las melodías y las letras sean también un mensaje, una invitación, una linda coincidencia.",
-    link: "https://chatbeat-nocountry.web.app/",
-    github: "https://github.com/No-Country/c16-32-m-java",
-    image: "foto3.png",
-    tags: [TAGS.REACT,TAGS.VITE,TAGS.JAVA ,TAGS.MYSQL],
-  },
-  {
-    title: "Entrena Conmigo",
-    description:
-      "Entrena Conmigo es una web app que surge del deseo de incorporar el hábito del ejercico en casa. Y su principal objetivo es ayudar a personas principiantes a superarse día a día según sus objetivos. Entrena Conmigo está pensado para todo tipo de usuarios pero principalmente para aquellos que no disponen de tiempo, son su primeros pasos o no saben como dar su primer paso en esta aventura de superación y hábitos para la salud física.",
-    link: "",
-    github: "https://github.com/No-Country/s14-33-php",
-    image: "foto4.png",
-    tags: [TAGS.REACT,TAGS.VITE,TAGS.MYSQL,TAGS.LARAVEL],
   },
   {
     title: "APP - ADMINISTRACION DE PACIENTES",

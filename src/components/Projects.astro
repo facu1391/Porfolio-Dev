@@ -14,6 +14,9 @@ import Laravel from "./icons/Laravel.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Next from "./icons/Next.astro"
 import TypeScript from "./icons/TypeScript.astro"
+import PostgresSQL from "./icons/PostgreSQL.astro"
+import Python from "./icons/Python.astro"
+import Shadcn from "./icons/Shadcn.astro"
 
 const TAGS = {
   TypeScript:{
@@ -75,17 +78,84 @@ const TAGS = {
     name: "LARAVEL",
     class: "bg-[#003159] text-white",
     icon: Laravel,
-  }
+  },
+  PYTHON: {
+  name: "Python",
+  class: "bg-[#003159] text-white",
+  icon: Python,
+},
+POSTGRES: {
+  name: "PostgreSQL",
+  class: "bg-[#003159] text-white",
+  icon: PostgresSQL, 
+},
+SHADCN: {
+  name: "shadcn/ui",
+  class: "bg-[#003159] text-white",
+  icon: Shadcn,
+},
 }
+
 const PROJECTS = [
- {
-    title: "App - Justina.io",
-    description:
-      "Plataforma integral para el sector salud que conecta a profesionales, pacientes, centros médicos, financiadores y proveedores. La app facilita el acceso a información médica, agendamiento de citas y coordinación de consultas, optimizando la gestión de historiales y la comunicación entre todos los actores del ecosistema. ",
-    link: "",
-    github: "",
-    image: "justina.1.png",
-    tags: [TAGS.REACT,TAGS.VITE, TAGS.Tailwind],
+  {
+  title: "Julieta Studio - Turnos + Panel de gestión",
+  description:
+    "Sitio web con sistema de turnos online en uso y panel interno de administración. Permite gestionar turnos disponibles, confirmar reservas, visualizar la agenda diaria y realizar un seguimiento básico de ingresos, digitalizando por completo la operación del negocio.",
+  link: "https://studio-julieta.vercel.app/",
+  github: "",
+  image: "julieta.png",
+  tags: [
+    TAGS.Next,
+    TAGS.TypeScript,
+    TAGS.Tailwind,
+    TAGS.SHADCN,
+   ],
+  },
+  {
+  title: "Web - Docya (Producto lanzado)",
+  description:
+    "Sitio web institucional de Docya, diseñado para comunicar claramente la propuesta del producto, presentar sus funcionalidades y facilitar la descarga de la aplicación. Incluye información sobre atención médica domiciliaria, beneficios del servicio y canales de contacto, priorizando una experiencia consistente y accesible.",
+  link: "https://www.docya.com.ar/",
+  github: "",
+  image: "docya.png",
+  tags: [
+    TAGS.Next,
+    TAGS.TypeScript,
+    TAGS.Tailwind,
+    TAGS.SHADCN,
+   ],
+  },
+  {
+  title: "Sistema - Control de Personal (Legislatura LR)",
+  description:
+    "Sistema web orientado a la digitalización y centralización de la gestión del personal, reemplazando procesos administrativos que anteriormente se realizaban en papel. La plataforma mejora la trazabilidad y el acceso a la información desde cualquier dispositivo. El backend fue desarrollado en Python con PostgreSQL, permitiendo una gestión de datos robusta y escalable.",
+  link: "",
+  github: "",
+  image: "personal.png",
+  tags: [
+    TAGS.Next,
+    TAGS.TypeScript,
+    TAGS.Tailwind,
+    TAGS.SHADCN,
+    TAGS.PYTHON,
+    TAGS.POSTGRES,
+   ],
+  },
+  {
+  title: "Sistema - Control Patrimonial (Legislatura LR)",
+  description:
+    "Sistema web para el control y gestión de bienes de uso. Reemplaza un sistema local obsoleto por una solución moderna accesible desde cualquier dispositivo, permitiendo operar desde el celular en tareas de campo, cargar información e imágenes en tiempo real y mantener los datos sincronizados. El backend fue desarrollado en Python con PostgreSQL, garantizando una gestión segura y confiable.",
+  link: "",
+  github: "",
+  image: "patrimonio.png",
+  tags: [
+    TAGS.Next,
+    TAGS.TypeScript,
+    TAGS.Tailwind,
+    TAGS.SHADCN,
+    TAGS.PYTHON,
+    TAGS.POSTGRES,
+   ],
   },
   {
     title: "Web - Satan&Co",
@@ -95,6 +165,15 @@ const PROJECTS = [
     github: "https://github.com/ProductDesignMeDev/satan-co",
     image: "santan.png",
     tags: [TAGS.Next,TAGS.TypeScript, TAGS.Tailwind],
+  },
+ {
+    title: "App - Justina.io",
+    description:
+      "Plataforma integral para el sector salud que conecta a profesionales, pacientes, centros médicos, financiadores y proveedores. La app facilita el acceso a información médica, agendamiento de citas y coordinación de consultas, optimizando la gestión de historiales y la comunicación entre todos los actores del ecosistema. ",
+    link: "",
+    github: "",
+    image: "justina.1.png",
+    tags: [TAGS.REACT,TAGS.VITE, TAGS.Tailwind],
   },
   {
     title: "Leadpages - ClinchHR",

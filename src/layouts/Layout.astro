@@ -18,24 +18,28 @@ const { description, title } = Astro.props
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <ViewTransitions />
   </head>
 
-  <body class="relative text-black dark:text-white">
+  <body class="relative isolate text-black dark:text-white">
     <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
+      class="fixed inset-0 z-0 pointer-events-none bg-gray-50 dark:bg-gray-950
       bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
       dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
-    >
-    </div>
+    ></div>
 
-    <Header />
-    <slot />
-    <Footer />
+    <div class="relative z-10 w-full">
+      <Header />
+      <slot />
+      <Footer />
+    </div>
 
     <style is:global>
       :root {
@@ -45,16 +49,23 @@ const { description, title } = Astro.props
       html {
         font-family: "Onest Variable", system-ui, sans-serif;
         scroll-behavior: smooth;
+        width: 100%;
+        max-width: 100%;
         overflow-x: hidden;
+        overflow-y: auto;
       }
 
       body {
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
         color: rgba(17, 17, 17, 0.9);
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-        overscroll-behavior: none;
-        overflow-x: hidden;
+        overscroll-behavior: auto;
       }
 
       @media (prefers-reduced-motion: reduce) {

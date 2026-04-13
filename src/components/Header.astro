@@ -26,15 +26,15 @@ const navItems = [
 ---
 
 <header
-  class="fixed top-0 z-10 flex w-full items-center justify-center px-4 pt-2"
+  class="fixed top-0 z-10 flex w-full items-center justify-center px-2 pt-2 sm:px-4"
 >
   <nav
-    class="flex items-center justify-center rounded-full border border-black/5 bg-white/75 px-3 text-sm font-medium text-gray-600 shadow-sm backdrop-blur dark:border-white/10 dark:bg-gray-900/65 dark:text-gray-200"
+    class="flex max-w-full items-center justify-center gap-0.5 overflow-x-auto whitespace-nowrap rounded-full border border-black/5 bg-white/75 px-2 py-0.5 text-xs font-medium text-gray-600 shadow-sm backdrop-blur [-ms-overflow-style:none] [scrollbar-width:none] dark:border-white/10 dark:bg-gray-900/65 dark:text-gray-200 sm:px-3 sm:text-sm"
   >
     {
       navItems.map((link) => (
         <a
-          class="relative block rounded-full px-3 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400"
+          class="relative block shrink-0 rounded-full px-2.5 py-2 leading-none transition hover:text-yellow-500 dark:hover:text-yellow-400 sm:px-3"
           aria-label={link.label}
           href={link.url}
         >
@@ -92,6 +92,10 @@ const navItems = [
     animation: nav-shadow 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
+  }
+
+  nav::-webkit-scrollbar {
+    display: none;
   }
 
   @keyframes nav-shadow {

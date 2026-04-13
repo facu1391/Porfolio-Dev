@@ -14,7 +14,7 @@ const copy = {
     headline: "Facundo Núñez",
     subheadline:
       "Desarrollador Fullstack orientado a producto, con experiencia llevando sistemas web reales desde la necesidad de negocio hasta producción.",
-    savePdf: "Guardar en PDF",
+    savePdf: "Descargar PDF",
     backToPortfolio: "Volver al portfolio",
     location: "La Rioja, Argentina",
     availability: "Disponible para roles Fullstack, Frontend Product Engineer o proyectos por entrega.",
@@ -46,7 +46,7 @@ const copy = {
     headline: "Facundo Núñez",
     subheadline:
       "Product-oriented Fullstack Developer with experience taking real web systems from business need to production.",
-    savePdf: "Save as PDF",
+    savePdf: "Download PDF",
     backToPortfolio: "Back to portfolio",
     location: "La Rioja, Argentina",
     availability: "Open to Fullstack roles, Frontend Product Engineer positions or project-based work.",
@@ -227,24 +227,18 @@ const stack = [
                 </button>
               </div>
 
-              <button
-                type="button"
-                onclick="printResume()"
+              <a
+                href="/facundo-nunez-cv.pdf"
+                download="Facundo-Nunez-CV.pdf"
                 class="inline-flex max-w-fit items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/15 focus:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 dark:border-gray-900/10 dark:bg-gray-950 dark:text-white dark:hover:bg-black"
                 data-i18n="savePdf"
               >
                 {copy.es.savePdf}
-              </button>
+              </a>
               <LinkButton href="/" rel="noopener noreferrer" data-i18n="backToPortfolio">
                 {copy.es.backToPortfolio}
               </LinkButton>
             </div>
-
-            <p
-              id="cv-print-status"
-              class="text-sm opacity-75"
-              data-print-hidden
-            ></p>
           </div>
         </div>
 
@@ -405,10 +399,6 @@ const stack = [
   </main>
 
   <script is:inline define:vars={{ copy }}>
-    const originalDocumentTitle = document.title
-    let isPrintTitleMuted = false
-    let printStatusTimeout = null
-
     const applyLanguage = (lang) => {
       const nextLang = lang === "en" ? "en" : "es"
 
@@ -439,55 +429,6 @@ const stack = [
       })
     }
 
-    const mutePrintTitle = () => {
-      if (isPrintTitleMuted) return
-      isPrintTitleMuted = true
-      document.title = ""
-    }
-
-    const restorePrintTitle = () => {
-      document.title = originalDocumentTitle
-      isPrintTitleMuted = false
-    }
-
-    const setPrintStatus = (message) => {
-      const status = document.getElementById("cv-print-status")
-      if (!(status instanceof HTMLElement)) return
-
-      status.textContent = message
-
-      if (printStatusTimeout) {
-        window.clearTimeout(printStatusTimeout)
-      }
-
-      if (!message) return
-
-      printStatusTimeout = window.setTimeout(() => {
-        status.textContent = ""
-      }, 5000)
-    }
-
-    window.printResume = () => {
-      const isMobile = window.matchMedia("(max-width: 768px)").matches
-      const canPrint = typeof window.print === "function"
-
-      if (!canPrint) {
-        setPrintStatus(
-          "Este navegador no admite generar PDF desde el botón. Probalo desde una compu o desde el menú Compartir/Imprimir del navegador.",
-        )
-        return
-      }
-
-      if (isMobile) {
-        setPrintStatus(
-          "En muchos navegadores móviles este botón no descarga PDF directo. Usá el menú del navegador y buscá Compartir o Imprimir.",
-        )
-      }
-
-      mutePrintTitle()
-      window.print()
-    }
-
     const initCvPage = () => {
       const browserLang = navigator.language?.toLowerCase().startsWith("en") ? "en" : "es"
       applyLanguage(browserLang)
@@ -509,9 +450,6 @@ const stack = [
     }
 
     document.addEventListener("astro:page-load", initCvPage)
-
-    window.addEventListener("beforeprint", mutePrintTitle)
-    window.addEventListener("afterprint", restorePrintTitle)
   </script>
 
   <style is:global>

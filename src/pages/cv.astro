@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro"
+import CvLayout from "../layouts/CvLayout.astro"
 import LinkButton from "../components/LinkButton.astro"
 import LinkedInIcon from "../components/icons/LinkedIn.astro"
 import MailIcon from "../components/icons/Mail.astro"
@@ -27,6 +27,7 @@ const copy = {
     achievementsTitle: "Logros seleccionados",
     achievements: [
       "Lideré y desarrollé sistemas internos en producción para la Legislatura de La Rioja, reemplazando procesos manuales y software obsoleto por herramientas web accesibles y mantenibles.",
+      "Desarrollé un sistema de gestión de agua para la Comisión de Fomento de Anjullón, digitalizando facturación, cobranzas, impresión de boletas y control operativo.",
       "Diseñé e implementé junto a mi socio una solución de turnos online y panel de gestión para Julieta Studio, digitalizando completamente la operación diaria del negocio.",
       "Entregué sitios y productos para clientes reales priorizando experiencia de usuario, claridad comercial, velocidad de implementación y calidad de entrega.",
     ],
@@ -58,6 +59,7 @@ const copy = {
     achievementsTitle: "Selected achievements",
     achievements: [
       "Led and built production internal systems for the Legislature of La Rioja, replacing paper-based workflows and outdated local tools with maintainable web solutions.",
+      "Built a water management system for the Commission of Fomento of Anjullón, digitizing billing, collections, document printing and operational control.",
       "Designed and implemented, together with my partner, an online booking flow and management dashboard for Julieta Studio, fully digitizing the business workflow.",
       "Delivered launched websites and products for real clients while prioritizing user experience, commercial clarity, implementation speed and delivery quality.",
     ],
@@ -90,6 +92,24 @@ const experience = [
     },
   },
   {
+    period: "2026",
+    company: "Comisión de Fomento de Anjullón",
+    role: {
+      es: "Fullstack Developer",
+      en: "Fullstack Developer",
+    },
+    bullets: {
+      es: [
+        "Desarrollé un sistema de gestión de agua para digitalizar asociados, lecturas, facturación, pagos e impresión de boletas.",
+        "La solución mejoró la eficiencia administrativa y facilitó el control operativo, incluyendo el envío de boletas por WhatsApp.",
+      ],
+      en: [
+        "Built a water management system to digitize members, meter readings, billing, payments and bill printing.",
+        "The solution improved administrative efficiency and made operational control easier, including WhatsApp bill delivery.",
+      ],
+    },
+  },
+  {
     period: "2025 - 2026",
     company: "Julieta Studio / Docya / Legislatura LR",
     role: {
@@ -117,7 +137,7 @@ const experience = [
     bullets: {
       es: [
         "Aporté en UX/UI, desarrollo web y definición de soluciones para necesidades reales de clientes.",
-        "Fortalecí una mirada end-to-end entre producto, interfaz, ejecución técnica y relación con negocio.",
+        "Fortalecí una mirada end-to-end entre producto, interfaz, ejecución técnica y contexto de negocio.",
       ],
       en: [
         "Contributed across UX/UI, web development and solution design for real client needs.",
@@ -129,35 +149,35 @@ const experience = [
 
 const projects = {
   es: [
-    "Julieta Studio: sitio institucional + sistema de turnos y panel de gestión que digitalizó la operación diaria del negocio.",
-    "Control de Personal: sistema web para digitalizar registros administrativos y centralizar información del personal.",
-    "Control Patrimonial: plataforma web para trabajo de campo y gestión centralizada de bienes desde escritorio o celular.",
-    "Docya: sitio institucional orientado a explicar el producto con claridad y mejorar adopción.",
+    "Sistema de Gestión de Agua: digitalización de asociados, lecturas, facturación, pagos e impresión de boletas para la Comisión de Fomento de Anjullón.",
+    "Julieta Studio: sitio institucional con turnos online y panel de gestión para ordenar la operación diaria.",
+    "Control de Personal: sistema interno para digitalizar registros administrativos y centralizar información del personal.",
+    "Control Patrimonial: plataforma para trabajo de campo y gestión centralizada de bienes desde escritorio o celular.",
   ],
   en: [
-    "Julieta Studio: institutional website plus booking flow and management dashboard that digitized the business daily operation.",
-    "Control de Personal: web system to digitize administrative records and centralize staff information.",
-    "Control Patrimonial: web platform for field work and centralized asset management from desktop or mobile.",
-    "Docya: institutional site designed to explain the product clearly and improve adoption.",
+    "Water Management System: digitized members, meter readings, billing, payments and bill printing for the Commission of Fomento of Anjullón.",
+    "Julieta Studio: institutional website with online bookings and a management dashboard to organize daily operations.",
+    "Control de Personal: internal system built to digitize administrative records and centralize staff information.",
+    "Control Patrimonial: platform for field work and centralized asset management from desktop or mobile.",
   ],
 }
 
 const stack = [
-  "Next.js, React, TypeScript",
+  "Next.js, React, TypeScript, NestJS",
   "Python, Node.js, Express",
   "PostgreSQL, MongoDB, Tailwind CSS",
-  "Frontend architecture, UI implementation, product thinking, delivery ownership",
+  "Frontend architecture, UI implementation, product thinking and delivery ownership",
 ]
 ---
 
-<Layout
+<CvLayout
   title={copy.es.title}
   description={copy.es.description}
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-24">
-      <article class="overflow-hidden rounded-[2rem] border border-black/5 bg-white/85 shadow-xl backdrop-blur dark:border-white/10 dark:bg-white/5">
-        <div class="border-b border-black/5 bg-gray-950 px-6 py-8 text-white dark:border-white/10 dark:bg-white dark:text-gray-950 md:px-10">
+      <article class="cv-sheet overflow-hidden rounded-[2rem] border border-black/5 bg-white/85 shadow-xl backdrop-blur dark:border-white/10 dark:bg-white/5">
+        <div class="cv-hero border-b border-black/5 bg-gray-950 px-6 py-8 text-white dark:border-white/10 dark:bg-white dark:text-gray-950 md:px-10">
           <div class="flex flex-col gap-6 xl:flex-row xl:items-start xl:justify-between">
             <div class="max-w-3xl">
               <p
@@ -209,7 +229,7 @@ const stack = [
 
               <button
                 type="button"
-                onclick="window.print()"
+                onclick="printResume()"
                 class="inline-flex max-w-fit items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/15 focus:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 dark:border-gray-900/10 dark:bg-gray-950 dark:text-white dark:hover:bg-black"
                 data-i18n="savePdf"
               >
@@ -222,9 +242,9 @@ const stack = [
           </div>
         </div>
 
-        <div class="grid gap-8 px-6 py-8 md:px-10 xl:grid-cols-[1.05fr,0.95fr]">
-          <section class="space-y-6">
-            <div class="rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+        <div class="cv-grid grid gap-8 px-6 py-8 md:px-10 2xl:grid-cols-[1.05fr,0.95fr]">
+          <section class="cv-main space-y-6">
+            <div class="cv-card rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
               <h2
                 class="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-700 dark:text-yellow-300"
                 data-i18n="strengthsTitle"
@@ -238,7 +258,7 @@ const stack = [
               </ul>
             </div>
 
-            <div class="rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+            <div class="cv-card rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
               <h2
                 class="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-700 dark:text-yellow-300"
                 data-i18n="achievementsTitle"
@@ -252,7 +272,7 @@ const stack = [
               </ul>
             </div>
 
-            <div class="rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+            <div class="cv-card rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
               <h2
                 class="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-700 dark:text-yellow-300"
                 data-i18n="experienceTitle"
@@ -263,7 +283,7 @@ const stack = [
               <div class="mt-4 space-y-4">
                 {
                   experience.map(({ period, company, role, bullets }) => (
-                    <article class="rounded-[1.25rem] border border-black/5 bg-gray-50/80 p-4 dark:border-white/10 dark:bg-black/10">
+                    <article class="cv-entry rounded-[1.25rem] border border-black/5 bg-gray-50/80 p-4 dark:border-white/10 dark:bg-black/10">
                       <div class="flex flex-col gap-1 md:flex-row md:items-start md:justify-between">
                         <div>
                           <h3
@@ -294,8 +314,8 @@ const stack = [
             </div>
           </section>
 
-          <aside class="space-y-6">
-            <section class="rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+          <aside class="cv-side space-y-6">
+            <section class="cv-card cv-projects rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
               <h2
                 class="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-700 dark:text-yellow-300"
                 data-i18n="projectsTitle"
@@ -309,7 +329,7 @@ const stack = [
               </ul>
             </section>
 
-            <section class="rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+            <section class="cv-card cv-stack rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
               <h2
                 class="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-700 dark:text-yellow-300"
                 data-i18n="stackTitle"
@@ -321,7 +341,7 @@ const stack = [
               </ul>
             </section>
 
-            <section class="rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+            <section class="cv-card cv-contact rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
               <h2
                 class="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-700 dark:text-yellow-300"
                 data-i18n="contactTitle"
@@ -344,7 +364,7 @@ const stack = [
               </div>
             </section>
 
-            <section class="rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+            <section class="cv-card cv-links rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
               <h2
                 class="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-700 dark:text-yellow-300"
                 data-i18n="linksTitle"
@@ -379,6 +399,9 @@ const stack = [
   </main>
 
   <script is:inline define:vars={{ copy }}>
+    const originalDocumentTitle = document.title
+    let isPrintTitleMuted = false
+
     const applyLanguage = (lang) => {
       const nextLang = lang === "en" ? "en" : "es"
 
@@ -409,30 +432,151 @@ const stack = [
       })
     }
 
-    document.addEventListener("astro:page-load", () => {
+    const mutePrintTitle = () => {
+      if (isPrintTitleMuted) return
+      isPrintTitleMuted = true
+      document.title = ""
+    }
+
+    const restorePrintTitle = () => {
+      document.title = originalDocumentTitle
+      isPrintTitleMuted = false
+    }
+
+    window.printResume = () => {
+      mutePrintTitle()
+      window.print()
+    }
+
+    const initCvPage = () => {
       const browserLang = navigator.language?.toLowerCase().startsWith("en") ? "en" : "es"
       applyLanguage(browserLang)
 
       document.querySelectorAll("[data-lang-button]").forEach((button) => {
+        if (button.dataset.bound === "true") return
+        button.dataset.bound = "true"
         button.addEventListener("click", () => {
           const nextLang = button.getAttribute("data-lang-button") ?? "es"
           applyLanguage(nextLang)
         })
       })
-    })
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initCvPage, { once: true })
+    } else {
+      initCvPage()
+    }
+
+    document.addEventListener("astro:page-load", initCvPage)
+
+    window.addEventListener("beforeprint", mutePrintTitle)
+    window.addEventListener("afterprint", restorePrintTitle)
   </script>
 
   <style is:global>
     @media print {
+      @page {
+        size: A4;
+        margin: 10mm 12mm;
+      }
+
+      :root {
+        color-scheme: light !important;
+      }
+
+      body > .fixed,
       header,
       footer,
+      nav,
       [data-print-hidden] {
         display: none !important;
       }
 
+      html,
       body {
         background: white !important;
+        color: #111827 !important;
+      }
+
+      main {
+        padding: 0 !important;
+      }
+
+      .py-16,
+      .py-24,
+      .md\:py-24 {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+      }
+
+      .cv-sheet {
+        overflow: visible !important;
+        border: none !important;
+        border-radius: 0 !important;
+        background: white !important;
+        box-shadow: none !important;
+      }
+
+      .cv-hero {
+        border-bottom: 1px solid rgba(15, 23, 42, 0.12) !important;
+        background: white !important;
+        color: #0f172a !important;
+        padding: 0 0 1rem !important;
+      }
+
+      .cv-grid {
+        display: block !important;
+        padding: 0.9rem 0 0 !important;
+      }
+
+      .cv-main,
+      .cv-side {
+        display: block !important;
+      }
+
+      .cv-main > .cv-card,
+      .cv-side > .cv-card {
+        margin-top: 0 !important;
+        margin-bottom: 0.85rem !important;
+      }
+
+      .cv-entry {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .cv-card h2,
+      .cv-card h3,
+      .cv-entry {
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      .cv-card {
+        break-inside: auto;
+        page-break-inside: auto;
+        margin-bottom: 0.85rem !important;
+        padding: 0 !important;
+        border: none !important;
+        border-radius: 0 !important;
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+
+      .cv-entry {
+        border: 1px solid rgba(15, 23, 42, 0.08) !important;
+        background: #f8fafc !important;
+      }
+
+      .cv-links {
+        display: none !important;
+      }
+
+      a {
+        color: inherit !important;
+        text-decoration: none !important;
       }
     }
   </style>
-</Layout>
+</CvLayout>

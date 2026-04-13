@@ -19,234 +19,384 @@ import Python from "./icons/Python.astro"
 import Shadcn from "./icons/Shadcn.astro"
 
 const TAGS = {
-  TypeScript:{
+  TYPESCRIPT: {
     name: "TypeScript",
-    class: "bg-[#003159] text-white",
+    class: "bg-sky-950 text-white",
     icon: TypeScript,
   },
-  Next:{
+  NEXT: {
     name: "Next.js",
-    class: "bg-[#003159] text-white",
+    class: "bg-neutral-950 text-white dark:bg-white dark:text-neutral-950",
     icon: Next,
   },
-  Tailwind:{
+  TAILWIND: {
     name: "Tailwind",
-    class: "bg-[#003159] text-white",
+    class: "bg-cyan-100 text-cyan-950 dark:bg-cyan-500/15 dark:text-cyan-100",
     icon: Tailwind,
   },
   REACT: {
-    name: "React.js",
-    class: "bg-black text-white",
+    name: "React",
+    class: "bg-sky-100 text-sky-950 dark:bg-sky-500/15 dark:text-sky-100",
     icon: ReactJs,
   },
   NODE: {
-    name: "Node.js",
-    class: "bg-[#003159] text-white",
+    name: "Node.js / NestJS",
+    class: "bg-emerald-100 text-emerald-950 dark:bg-emerald-500/15 dark:text-emerald-100",
     icon: NodeJs,
   },
   JAVA: {
-    name: "java",
-    class: "bg-[#003159] text-white",
+    name: "Java",
+    class: "bg-orange-100 text-orange-950 dark:bg-orange-500/15 dark:text-orange-100",
     icon: JavaBack,
   },
   MONGO: {
-    name: "MongoDb",
-    class: "bg-[#003159] text-white",
+    name: "MongoDB",
+    class: "bg-emerald-100 text-emerald-950 dark:bg-emerald-500/15 dark:text-emerald-100",
     icon: MongoDb,
   },
   MYSQL: {
-    name: "Mysql",
-    class: "bg-[#003159] text-white",
+    name: "MySQL",
+    class: "bg-blue-100 text-blue-950 dark:bg-blue-500/15 dark:text-blue-100",
     icon: Mysql,
   },
   EXPRESS: {
-    name: "Express.js",
-    class: "bg-[#003159] text-white",
+    name: "Express",
+    class: "bg-zinc-200 text-zinc-900 dark:bg-zinc-700/60 dark:text-zinc-100",
     icon: ExpressJs,
   },
   VITE: {
-    name: "VITE",
-    class: "bg-[#003159] text-white",
+    name: "Vite",
+    class: "bg-violet-100 text-violet-950 dark:bg-violet-500/15 dark:text-violet-100",
     icon: ViteJs,
   },
   CSS: {
     name: "CSS",
-    class: "bg-[#003159] text-white",
+    class: "bg-blue-100 text-blue-950 dark:bg-blue-500/15 dark:text-blue-100",
     icon: CSSNa,
   },
   LARAVEL: {
-    name: "LARAVEL",
-    class: "bg-[#003159] text-white",
+    name: "Laravel",
+    class: "bg-red-100 text-red-950 dark:bg-red-500/15 dark:text-red-100",
     icon: Laravel,
   },
   PYTHON: {
-  name: "Python",
-  class: "bg-[#003159] text-white",
-  icon: Python,
-},
-POSTGRES: {
-  name: "PostgreSQL",
-  class: "bg-[#003159] text-white",
-  icon: PostgresSQL, 
-},
-SHADCN: {
-  name: "shadcn/ui",
-  class: "bg-[#003159] text-white",
-  icon: Shadcn,
-},
+    name: "Python",
+    class: "bg-amber-100 text-amber-950 dark:bg-amber-500/15 dark:text-amber-100",
+    icon: Python,
+  },
+  POSTGRES: {
+    name: "PostgreSQL",
+    class: "bg-indigo-100 text-indigo-950 dark:bg-indigo-500/15 dark:text-indigo-100",
+    icon: PostgresSQL,
+  },
+  SHADCN: {
+    name: "shadcn/ui",
+    class: "bg-zinc-200 text-zinc-900 dark:bg-zinc-700/60 dark:text-zinc-100",
+    icon: Shadcn,
+  },
 }
 
 const PROJECTS = [
   {
-  title: "Julieta Studio - Turnos + Panel de gestión",
-  description:
-    "Sitio web con sistema de turnos online en uso y panel interno de administración. Permite gestionar turnos disponibles, confirmar reservas, visualizar la agenda diaria y realizar un seguimiento básico de ingresos, digitalizando por completo la operación del negocio.",
-  link: "https://studio-julieta.vercel.app/",
-  github: "",
-  image: "julieta.png",
-  tags: [
-    TAGS.Next,
-    TAGS.TypeScript,
-    TAGS.Tailwind,
-    TAGS.SHADCN,
-   ],
-  },
-  {
-  title: "Web - Docya (Producto lanzado)",
-  description:
-    "Sitio web institucional de Docya, diseñado para comunicar claramente la propuesta del producto, presentar sus funcionalidades y facilitar la descarga de la aplicación. Incluye información sobre atención médica domiciliaria, beneficios del servicio y canales de contacto, priorizando una experiencia consistente y accesible.",
-  link: "https://www.docya.com.ar/",
-  github: "",
-  image: "docya.png",
-  tags: [
-    TAGS.Next,
-    TAGS.TypeScript,
-    TAGS.Tailwind,
-    TAGS.SHADCN,
-   ],
-  },
-  {
-  title: "Sistema - Control de Personal (Legislatura LR)",
-  description:
-    "Sistema web orientado a la digitalización y centralización de la gestión del personal, reemplazando procesos administrativos que anteriormente se realizaban en papel. La plataforma mejora la trazabilidad y el acceso a la información desde cualquier dispositivo. El backend fue desarrollado en Python con PostgreSQL, permitiendo una gestión de datos robusta y escalable.",
-  link: "",
-  github: "",
-  image: "personal.png",
-  tags: [
-    TAGS.Next,
-    TAGS.TypeScript,
-    TAGS.Tailwind,
-    TAGS.SHADCN,
-    TAGS.PYTHON,
-    TAGS.POSTGRES,
-   ],
-  },
-  {
-  title: "Sistema - Control Patrimonial (Legislatura LR)",
-  description:
-    "Sistema web para el control y gestión de bienes de uso. Reemplaza un sistema local obsoleto por una solución moderna accesible desde cualquier dispositivo, permitiendo operar desde el celular en tareas de campo, cargar información e imágenes en tiempo real y mantener los datos sincronizados. El backend fue desarrollado en Python con PostgreSQL, garantizando una gestión segura y confiable.",
-  link: "",
-  github: "",
-  image: "patrimonio.png",
-  tags: [
-    TAGS.Next,
-    TAGS.TypeScript,
-    TAGS.Tailwind,
-    TAGS.SHADCN,
-    TAGS.PYTHON,
-    TAGS.POSTGRES,
-   ],
-  },
-  {
-    title: "Web - Satan&Co",
+    title: "Sistema de Gestión de Agua",
     description:
-      "Plataforma informativa que presenta de forma integral la empresa y sus valores, al mismo tiempo que impulsa la visibilidad, maximiza la conversión de usuarios y optimiza el posicionamiento SEO. Con un enfoque en el sector del cannabis, la web destaca productos de calidad y fortalece su presencia digital.",
-    link: "https://www.satanycogenetics.com/Home",
-    github: "https://github.com/ProductDesignMeDev/satan-co",
-    image: "santan.png",
-    tags: [TAGS.Next,TAGS.TypeScript, TAGS.Tailwind],
+      "Sistema desarrollado para la Comisión de Fomento de Anjullón orientado a digitalizar la administración del servicio de agua, incluyendo asociados, lecturas, facturación por período, pagos, impresión de boletas y configuración general.",
+    impact:
+      "Mejoró la eficiencia administrativa, redujo errores manuales y facilitó el control de cobranzas, documentación operativa y envío de boletas por WhatsApp.",
+    role: "Desarrollo fullstack con Next.js, NestJS, TypeORM y PostgreSQL",
+    status: "Producto en uso",
+    link: "",
+    github: "",
+    image: "fomento-agua.png",
+    imageClass:
+      "object-contain bg-[#0f1a24] p-3 dark:bg-[#0b141d]",
+    featured: true,
+    tags: [
+      TAGS.NEXT,
+      TAGS.TYPESCRIPT,
+      TAGS.TAILWIND,
+      TAGS.NODE,
+      TAGS.POSTGRES,
+    ],
   },
- {
-    title: "App - Justina.io",
+  {
+    title: "Control de Personal",
     description:
-      "Plataforma integral para el sector salud que conecta a profesionales, pacientes, centros médicos, financiadores y proveedores. La app facilita el acceso a información médica, agendamiento de citas y coordinación de consultas, optimizando la gestión de historiales y la comunicación entre todos los actores del ecosistema. ",
+      "Sistema web para la Legislatura de La Rioja orientado a digitalizar y centralizar la gestión del personal.",
+    impact:
+      "Reemplazó procesos manuales en papel y mejoró la trazabilidad y disponibilidad de la información.",
+    role: "Frontend y backend con Python + PostgreSQL",
+    status: "Sistema en producción",
+    link: "",
+    github: "",
+    image: "personal.png",
+    imageClass:
+      "object-contain bg-slate-100 p-3 dark:bg-slate-950/60",
+    featured: true,
+    tags: [
+      TAGS.NEXT,
+      TAGS.TYPESCRIPT,
+      TAGS.TAILWIND,
+      TAGS.SHADCN,
+      TAGS.PYTHON,
+      TAGS.POSTGRES,
+    ],
+  },
+  {
+    title: "Control Patrimonial",
+    description:
+      "Sistema para gestión de bienes de uso con carga de datos e imágenes en tiempo real desde escritorio o celular.",
+    impact:
+      "Reemplazó un sistema local obsoleto por una solución web moderna para trabajo de campo y administración centralizada.",
+    role: "Frontend y backend con Python + PostgreSQL",
+    status: "Sistema en producción",
+    link: "",
+    github: "",
+    image: "patrimonio.png",
+    imageClass:
+      "object-contain bg-slate-100 p-3 dark:bg-slate-950/60",
+    featured: true,
+    tags: [
+      TAGS.NEXT,
+      TAGS.TYPESCRIPT,
+      TAGS.TAILWIND,
+      TAGS.SHADCN,
+      TAGS.PYTHON,
+      TAGS.POSTGRES,
+    ],
+  },
+  {
+    title: "Docya",
+    description:
+      "Sitio institucional para presentar el producto, comunicar beneficios del servicio y facilitar la descarga de la app.",
+    impact:
+      "Ayudó a presentar una propuesta de salud con un mensaje más claro, accesible y consistente en distintos dispositivos.",
+    role: "Desarrollo frontend",
+    status: "Producto lanzado",
+    link: "https://www.docya.com.ar/",
+    github: "",
+    image: "docya.png",
+    imageClass:
+      "object-contain bg-slate-100 p-3 dark:bg-slate-950/60",
+    featured: true,
+    tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.SHADCN],
+  },
+  {
+    title: "Julieta Studio",
+    description:
+      "Sitio web para una estética con sistema de turnos online en uso y panel de gestión para administrar agenda, reservas e ingresos básicos.",
+    impact:
+      "Digitalizó por completo la operación del negocio y permitió gestionar turnos desde cualquier dispositivo.",
+    role: "Desarrollo fullstack junto a mi socio",
+    status: "Producto en uso",
+    link: "https://studio-julieta.vercel.app/",
+    github: "",
+    image: "julieta.png",
+    imageClass:
+      "object-contain bg-slate-100 p-3 dark:bg-slate-950/60",
+    featured: false,
+    tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.SHADCN],
+  },
+  {
+    title: "Justina.io",
+    description:
+      "Propuesta frontend para una plataforma de salud omnicanal creada en un Hackathon de No Country.",
+    impact:
+      "Mejoró la claridad de la interfaz para pacientes y personal de salud.",
+    role: "Liderazgo de diseño y frontend",
+    status: "Hackathon",
     link: "",
     github: "",
     image: "justina.1.png",
-    tags: [TAGS.REACT,TAGS.VITE, TAGS.Tailwind],
+    imageClass:
+      "object-contain bg-slate-100 p-3 dark:bg-slate-950/60",
+    featured: false,
+    tags: [TAGS.REACT, TAGS.VITE, TAGS.TAILWIND],
   },
   {
-    title: "Leadpages - ClinchHR",
+    title: "ClinchHR",
     description:
-      "Es una plataforma informativa diseñada para proporcionar a los clientes una visión completa de su empresa. Aquí, los visitantes encontrarán detalles exhaustivos sobre la empresa, sus servicios, productos, valores fundamentales y otros aspectos relevantes.",
+      "Landing page desarrollada para comunicar servicios, valores y propuesta comercial de la empresa.",
+    impact:
+      "Acompañó el objetivo comercial con una interfaz clara, atractiva y enfocada en conversión.",
+    role: "Desarrollo frontend",
+    status: "Freelance",
     link: "https://www.hireclinch.com/",
     github: "https://github.com/facu1391/Clinch?tab=readme-ov-file",
     image: "foto2.png",
-    tags: [TAGS.REACT,TAGS.VITE, TAGS.CSS],
+    imageClass:
+      "object-contain bg-slate-100 p-3 dark:bg-slate-950/60",
+    featured: false,
+    tags: [TAGS.REACT, TAGS.VITE, TAGS.CSS],
   },
   {
-    title: "APP - ADMINISTRACION DE PACIENTES",
+    title: "Administración de Pacientes",
     description:
-      "La motivación detrás de la construcción de la aplicación de administración de pacientes fue crear una herramienta eficiente y accesible para mejorar la gestión y atención de los pacientes en entornos médicos.",
+      "App fullstack para una veterinaria con gestión integral de pacientes y turnos.",
+    impact:
+      "Demuestra mi capacidad para resolver el flujo completo desde UI hasta base de datos.",
+    role: "Proyecto personal fullstack",
+    status: "Proyecto personal",
     link: "https://mern-app-frontend-nu.vercel.app/",
     github: "https://github.com/facu1391/MERN_APP_frontend",
     image: "foto1.png",
-    tags: [TAGS.REACT,TAGS.EXPRESS ,TAGS.MONGO],
+    imageClass:
+      "object-contain bg-slate-100 p-3 dark:bg-slate-950/60",
+    featured: false,
+    tags: [TAGS.REACT, TAGS.EXPRESS, TAGS.MONGO, TAGS.NODE],
   },
- 
 ]
+
+const featuredProjects = PROJECTS.filter(({ featured }) => featured)
+const otherProjects = PROJECTS.filter(({ featured }) => !featured)
 ---
 
-<div class="flex flex-col gap-y-16">
-  {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Muestra" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
+<div class="space-y-14">
+  <div class="max-w-2xl">
+    <p class="text-lg text-gray-700 dark:text-gray-300">
+      Seleccioné primero los trabajos que mejor muestran cómo pienso producto, cómo
+      construyo interfaces y cómo llevo soluciones reales a producción.
+    </p>
   </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
+  <div class="space-y-8">
+    {
+      featuredProjects.map(({ image, imageClass, title, description, impact, role, status, tags, link, github }) => (
+        <article class="items-start grid gap-6 overflow-hidden rounded-[2rem] border border-black/5 bg-white/70 p-5 shadow-lg backdrop-blur transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/5 lg:grid-cols-[1.1fr,1fr]">
+          <div class="self-start overflow-hidden rounded-[1.5rem] border border-black/5 bg-slate-100 dark:border-white/10 dark:bg-slate-950/60">
+            <div class="flex items-center justify-center">
+              <img
+                alt={`Captura del proyecto ${title}`}
+                class={`h-auto max-h-[420px] w-full ${imageClass}`}
+                loading="lazy"
+                src={`/${image}`}
+              />
+            </div>
+          </div>
+
+          <div class="flex flex-col justify-between">
+            <div>
+              <span class="inline-flex rounded-full bg-yellow-100 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-yellow-900 dark:bg-yellow-300/15 dark:text-yellow-100">
+                {status}
               </span>
-            </li>
-          ))}
-        </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" /> 
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
+              <h3 class="mt-4 text-2xl font-bold text-gray-900 dark:text-gray-100">
+                {title}
+              </h3>
+
+              <p class="mt-3 text-base leading-7 text-gray-700 dark:text-gray-300">
+                {description}
+              </p>
+
+              <div class="mt-5 grid gap-3 md:grid-cols-2">
+                <div class="rounded-2xl border border-black/5 bg-white/85 px-4 py-4 text-gray-900 dark:border-white/10 dark:bg-slate-900/70 dark:text-white">
+                  <p class="text-xs uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Rol</p>
+                  <p class="mt-2 text-sm font-medium">{role}</p>
+                </div>
+                <div class="rounded-2xl border border-black/5 bg-white/85 px-4 py-4 text-gray-900 dark:border-white/10 dark:bg-slate-900/70 dark:text-white">
+                  <p class="text-xs uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">Impacto</p>
+                  <p class="mt-2 text-sm font-medium">{impact}</p>
+                </div>
+              </div>
+
+              <ul class="mt-5 flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <li>
+                    <span class={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium ${tag.class}`}>
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <footer class="mt-6 flex flex-wrap gap-3">
+              {github && (
+                <LinkButton href={github} target="_blank" rel="noopener noreferrer">
+                  <GitHub class="size-5" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link} target="_blank" rel="noopener noreferrer">
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+
+  <div class="space-y-6">
+    <div class="flex items-center justify-between gap-4">
+      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Más proyectos</h3>
+      <p class="text-sm text-gray-500 dark:text-gray-400">
+        Otras colaboraciones, freelos y proyectos personales.
+      </p>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {
+        otherProjects.map(({ image, imageClass, title, description, role, status, tags, link, github }) => (
+          <article class="flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-black/5 bg-white/70 p-4 backdrop-blur transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/5">
+            <div class="overflow-hidden rounded-[1.25rem] border border-black/5 bg-slate-100 dark:border-white/10 dark:bg-slate-950/60">
+              <div class="flex items-center justify-center">
+                <img
+                  alt={`Captura del proyecto ${title}`}
+                  class={`h-auto max-h-[280px] w-full ${imageClass}`}
+                  loading="lazy"
+                  src={`/${image}`}
+                />
+              </div>
+            </div>
+
+            <div class="flex flex-1 flex-col">
+              <div class="mt-4 flex items-center justify-between gap-3">
+                <h4 class="text-xl font-semibold text-gray-900 dark:text-white">{title}</h4>
+                <span class="rounded-full bg-black/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-700 dark:bg-white/10 dark:text-gray-200">
+                  {status}
+                </span>
+              </div>
+
+              <p class="mt-3 text-sm leading-6 text-gray-700 dark:text-gray-300">
+                {description}
+              </p>
+
+              <p class="mt-3 text-sm font-medium text-gray-900 dark:text-white">{role}</p>
+
+              <ul class="mt-4 flex flex-wrap gap-2">
+                {tags.map((tag) => (
+                  <li>
+                    <span class={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium ${tag.class}`}>
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
+              <footer class="mt-5 flex flex-wrap gap-3">
+                {github && (
+                  <LinkButton href={github} target="_blank" rel="noopener noreferrer">
+                    <GitHub class="size-5" />
+                    Code
+                  </LinkButton>
+                )}
+                {link && (
+                  <LinkButton href={link} target="_blank" rel="noopener noreferrer">
+                    <Link class="size-4" />
+                    Preview
+                  </LinkButton>
+                )}
+              </footer>
+            </div>
+          </article>
+        ))
+      }
     </div>
   </div>
-</article>
-    ))
-  }
 </div>
-
-
-

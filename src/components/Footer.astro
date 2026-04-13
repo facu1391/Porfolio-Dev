@@ -3,26 +3,25 @@ const currentYear = new Date().getFullYear()
 ---
 
 <footer
-  class="opacity-80 m-4 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
+  class="container mx-auto mb-10 mt-16 flex w-full justify-center px-4 opacity-80 lg:max-w-4xl md:max-w-2xl"
 >
   <div
-    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
+    class="mx-auto flex w-full max-w-screen-xl flex-col gap-4 rounded-lg border border-black/5 bg-white/40 px-4 py-4 backdrop-blur dark:border-white/10 dark:bg-white/5 md:flex-row md:items-center md:justify-between"
   >
-    <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
-      >© {currentYear}
-      <a href="#" class="hover:underline">Facundo Nuñez</a>.
-      todos los derechos reservados
+    <span class="text-sm text-zinc-800/90 dark:text-zinc-200/90">
+      © {currentYear}
+      <a href="#" class="hover:underline">Facundo Núñez</a>.
+      Todos los derechos reservados.
     </span>
+
     <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
+      class="flex flex-wrap items-center gap-4 text-sm font-medium dark:text-white/90"
     >
       <li>
-        <a href="/#sobre-mi" class="hover:underline me-4 md:me-6">Sobre mí</a>
+        <a href="/#sobre-mi" class="hover:underline">Sobre mí</a>
       </li>
       <li>
-        <a id="contacto" href="mailto:facurael@gmail.com" class="hover:underline"
-          >Contacto</a
-        >
+        <a href="/#contacto" class="hover:underline">Contacto</a>
       </li>
     </ul>
   </div>

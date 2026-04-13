@@ -1,0 +1,438 @@
+---
+import Layout from "../layouts/Layout.astro"
+import LinkButton from "../components/LinkButton.astro"
+import LinkedInIcon from "../components/icons/LinkedIn.astro"
+import MailIcon from "../components/icons/Mail.astro"
+import SectionContainer from "../components/SectionContainer.astro"
+
+const copy = {
+  es: {
+    title: "CV de Facundo Núñez | Desarrollador Fullstack",
+    description:
+      "CV y resumen profesional de Facundo Núñez, desarrollador Fullstack con experiencia en sistemas internos, productos web y proyectos en producción.",
+    eyebrow: "CV / Resume",
+    headline: "Facundo Núñez",
+    subheadline:
+      "Desarrollador Fullstack orientado a producto, con experiencia llevando sistemas web reales desde la necesidad de negocio hasta producción.",
+    savePdf: "Guardar en PDF",
+    backToPortfolio: "Volver al portfolio",
+    location: "La Rioja, Argentina",
+    availability: "Disponible para roles Fullstack, Frontend Product Engineer o proyectos por entrega.",
+    strengthsTitle: "Posicionamiento",
+    strengths: [
+      "Más de 4 años construyendo productos web, sitios institucionales y sistemas internos en uso real.",
+      "Perfil híbrido entre frontend, backend y criterio de producto, cómodo tomando ownership de una funcionalidad de punta a punta.",
+      "Experiencia trabajando con equipos, clientes y contextos donde lo importante no es solo desarrollar, sino destrabar una operación y entregar una solución clara.",
+    ],
+    achievementsTitle: "Logros seleccionados",
+    achievements: [
+      "Lideré y desarrollé sistemas internos en producción para la Legislatura de La Rioja, reemplazando procesos manuales y software obsoleto por herramientas web accesibles y mantenibles.",
+      "Diseñé e implementé junto a mi socio una solución de turnos online y panel de gestión para Julieta Studio, digitalizando completamente la operación diaria del negocio.",
+      "Entregué sitios y productos para clientes reales priorizando experiencia de usuario, claridad comercial, velocidad de implementación y calidad de entrega.",
+    ],
+    experienceTitle: "Experiencia",
+    projectsTitle: "Proyectos destacados",
+    stackTitle: "Stack principal",
+    contactTitle: "Contacto",
+    linksTitle: "Enlaces",
+    printNote: "Versión lista para imprimir o guardar como PDF.",
+  },
+  en: {
+    title: "Resume of Facundo Núñez | Fullstack Developer",
+    description:
+      "Resume and professional summary of Facundo Núñez, a Fullstack Developer with experience in internal systems, web products and production environments.",
+    eyebrow: "Resume / CV",
+    headline: "Facundo Núñez",
+    subheadline:
+      "Product-oriented Fullstack Developer with experience taking real web systems from business need to production.",
+    savePdf: "Save as PDF",
+    backToPortfolio: "Back to portfolio",
+    location: "La Rioja, Argentina",
+    availability: "Open to Fullstack roles, Frontend Product Engineer positions or project-based work.",
+    strengthsTitle: "Positioning",
+    strengths: [
+      "4+ years building web products, institutional websites and internal systems used in real-world operations.",
+      "Hybrid profile across frontend, backend and product thinking, comfortable taking ownership of a feature end to end.",
+      "Experience working with teams and clients where the goal is not only shipping code, but unblocking operations and delivering clear solutions.",
+    ],
+    achievementsTitle: "Selected achievements",
+    achievements: [
+      "Led and built production internal systems for the Legislature of La Rioja, replacing paper-based workflows and outdated local tools with maintainable web solutions.",
+      "Designed and implemented, together with my partner, an online booking flow and management dashboard for Julieta Studio, fully digitizing the business workflow.",
+      "Delivered launched websites and products for real clients while prioritizing user experience, commercial clarity, implementation speed and delivery quality.",
+    ],
+    experienceTitle: "Experience",
+    projectsTitle: "Selected projects",
+    stackTitle: "Core stack",
+    contactTitle: "Contact",
+    linksTitle: "Links",
+    printNote: "This version is optimized for printing or saving as PDF.",
+  },
+}
+
+const experience = [
+  {
+    period: "2025 - Present",
+    company: "Legislatura de la Provincia de La Rioja",
+    role: {
+      es: "Fullstack Developer",
+      en: "Fullstack Developer",
+    },
+    bullets: {
+      es: [
+        "Desarrollo y mantengo sistemas internos orientados a mejorar procesos administrativos y operativos con impacto directo en el trabajo diario de los equipos.",
+        "Tomo ownership de funcionalidades, mejoras de interfaz y optimización de flujos, priorizando claridad técnica, uso real y mantenibilidad.",
+      ],
+      en: [
+        "Build and maintain internal systems that improve administrative and operational workflows with direct impact on day-to-day team operations.",
+        "Take ownership of features, interface improvements and workflow optimization while prioritizing technical clarity, real use and maintainability.",
+      ],
+    },
+  },
+  {
+    period: "2025 - 2026",
+    company: "Julieta Studio / Docya / Legislatura LR",
+    role: {
+      es: "Product-minded Fullstack / Frontend Developer",
+      en: "Product-minded Fullstack / Frontend Developer",
+    },
+    bullets: {
+      es: [
+        "Participé en sitios institucionales, productos lanzados y sistemas internos en producción, adaptándome al contexto técnico y comercial de cada proyecto.",
+        "Me moví entre frontend, backend y decisiones de producto según la necesidad del proyecto, buscando siempre destrabar entregas y sostener calidad.",
+      ],
+      en: [
+        "Worked across institutional websites, launched products and production internal systems, adapting to the technical and business context of each project.",
+        "Moved between frontend, backend and product decisions depending on project needs, always aiming to unblock delivery while keeping quality high.",
+      ],
+    },
+  },
+  {
+    period: "2023 - 2024",
+    company: "AtomiCat",
+    role: {
+      es: "Co-founder / Product & Web Developer",
+      en: "Co-founder / Product & Web Developer",
+    },
+    bullets: {
+      es: [
+        "Aporté en UX/UI, desarrollo web y definición de soluciones para necesidades reales de clientes.",
+        "Fortalecí una mirada end-to-end entre producto, interfaz, ejecución técnica y relación con negocio.",
+      ],
+      en: [
+        "Contributed across UX/UI, web development and solution design for real client needs.",
+        "Strengthened an end-to-end perspective across product, interface, technical delivery and business context.",
+      ],
+    },
+  },
+]
+
+const projects = {
+  es: [
+    "Julieta Studio: sitio institucional + sistema de turnos y panel de gestión que digitalizó la operación diaria del negocio.",
+    "Control de Personal: sistema web para digitalizar registros administrativos y centralizar información del personal.",
+    "Control Patrimonial: plataforma web para trabajo de campo y gestión centralizada de bienes desde escritorio o celular.",
+    "Docya: sitio institucional orientado a explicar el producto con claridad y mejorar adopción.",
+  ],
+  en: [
+    "Julieta Studio: institutional website plus booking flow and management dashboard that digitized the business daily operation.",
+    "Control de Personal: web system to digitize administrative records and centralize staff information.",
+    "Control Patrimonial: web platform for field work and centralized asset management from desktop or mobile.",
+    "Docya: institutional site designed to explain the product clearly and improve adoption.",
+  ],
+}
+
+const stack = [
+  "Next.js, React, TypeScript",
+  "Python, Node.js, Express",
+  "PostgreSQL, MongoDB, Tailwind CSS",
+  "Frontend architecture, UI implementation, product thinking, delivery ownership",
+]
+---
+
+<Layout
+  title={copy.es.title}
+  description={copy.es.description}
+>
+  <main class="px-4">
+    <SectionContainer class="py-16 md:py-24">
+      <article class="overflow-hidden rounded-[2rem] border border-black/5 bg-white/85 shadow-xl backdrop-blur dark:border-white/10 dark:bg-white/5">
+        <div class="border-b border-black/5 bg-gray-950 px-6 py-8 text-white dark:border-white/10 dark:bg-white dark:text-gray-950 md:px-10">
+          <div class="flex flex-col gap-6 xl:flex-row xl:items-start xl:justify-between">
+            <div class="max-w-3xl">
+              <p
+                class="text-sm font-medium uppercase tracking-[0.22em] opacity-70"
+                data-i18n="eyebrow"
+              >
+                {copy.es.eyebrow}
+              </p>
+              <h1 class="mt-3 text-4xl font-bold tracking-tight sm:text-5xl" data-i18n="headline">
+                {copy.es.headline}
+              </h1>
+              <p
+                class="mt-4 max-w-3xl text-lg leading-8 opacity-90"
+                data-i18n="subheadline"
+              >
+                {copy.es.subheadline}
+              </p>
+
+              <div class="mt-5 flex flex-wrap gap-3 text-sm opacity-85">
+                <span data-i18n="location">{copy.es.location}</span>
+                <span class="opacity-40">•</span>
+                <span data-i18n="availability">{copy.es.availability}</span>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3" data-print-hidden>
+              <div
+                class="inline-flex rounded-full border border-white/15 bg-white/10 p-1 dark:border-gray-900/10 dark:bg-gray-950"
+                role="group"
+                aria-label="Language switcher"
+              >
+                <button
+                  type="button"
+                  class="lang-toggle rounded-full px-4 py-2 text-sm font-semibold transition"
+                  data-lang-button="es"
+                  aria-pressed="true"
+                >
+                  ES
+                </button>
+                <button
+                  type="button"
+                  class="lang-toggle rounded-full px-4 py-2 text-sm font-semibold transition"
+                  data-lang-button="en"
+                  aria-pressed="false"
+                >
+                  EN
+                </button>
+              </div>
+
+              <button
+                type="button"
+                onclick="window.print()"
+                class="inline-flex max-w-fit items-center justify-center gap-2 rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/15 focus:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 dark:border-gray-900/10 dark:bg-gray-950 dark:text-white dark:hover:bg-black"
+                data-i18n="savePdf"
+              >
+                {copy.es.savePdf}
+              </button>
+              <LinkButton href="/" rel="noopener noreferrer" data-i18n="backToPortfolio">
+                {copy.es.backToPortfolio}
+              </LinkButton>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid gap-8 px-6 py-8 md:px-10 xl:grid-cols-[1.05fr,0.95fr]">
+          <section class="space-y-6">
+            <div class="rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+              <h2
+                class="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-700 dark:text-yellow-300"
+                data-i18n="strengthsTitle"
+              >
+                {copy.es.strengthsTitle}
+              </h2>
+              <ul class="mt-4 space-y-3 text-sm leading-7 text-gray-700 dark:text-gray-300">
+                {copy.es.strengths.map((item, index) => (
+                  <li data-es={item} data-en={copy.en.strengths[index]}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+              <h2
+                class="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-700 dark:text-yellow-300"
+                data-i18n="achievementsTitle"
+              >
+                {copy.es.achievementsTitle}
+              </h2>
+              <ul class="mt-4 space-y-3 text-sm leading-7 text-gray-700 dark:text-gray-300">
+                {copy.es.achievements.map((item, index) => (
+                  <li data-es={item} data-en={copy.en.achievements[index]}>{item}</li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+              <h2
+                class="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-700 dark:text-yellow-300"
+                data-i18n="experienceTitle"
+              >
+                {copy.es.experienceTitle}
+              </h2>
+
+              <div class="mt-4 space-y-4">
+                {
+                  experience.map(({ period, company, role, bullets }) => (
+                    <article class="rounded-[1.25rem] border border-black/5 bg-gray-50/80 p-4 dark:border-white/10 dark:bg-black/10">
+                      <div class="flex flex-col gap-1 md:flex-row md:items-start md:justify-between">
+                        <div>
+                          <h3
+                            class="text-lg font-semibold text-gray-900 dark:text-white"
+                            data-es={role.es}
+                            data-en={role.en}
+                          >
+                            {role.es}
+                          </h3>
+                          <p class="text-sm font-medium text-gray-600 dark:text-gray-300">
+                            {company}
+                          </p>
+                        </div>
+                        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">
+                          {period}
+                        </p>
+                      </div>
+
+                      <ul class="mt-3 space-y-2 text-sm leading-7 text-gray-700 dark:text-gray-300">
+                        {bullets.es.map((item, index) => (
+                          <li data-es={item} data-en={bullets.en[index]}>{item}</li>
+                        ))}
+                      </ul>
+                    </article>
+                  ))
+                }
+              </div>
+            </div>
+          </section>
+
+          <aside class="space-y-6">
+            <section class="rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+              <h2
+                class="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-700 dark:text-yellow-300"
+                data-i18n="projectsTitle"
+              >
+                {copy.es.projectsTitle}
+              </h2>
+              <ul class="mt-4 space-y-3 text-sm leading-7 text-gray-700 dark:text-gray-300">
+                {projects.es.map((item, index) => (
+                  <li data-es={item} data-en={projects.en[index]}>{item}</li>
+                ))}
+              </ul>
+            </section>
+
+            <section class="rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+              <h2
+                class="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-700 dark:text-yellow-300"
+                data-i18n="stackTitle"
+              >
+                {copy.es.stackTitle}
+              </h2>
+              <ul class="mt-4 space-y-3 text-sm leading-7 text-gray-700 dark:text-gray-300">
+                {stack.map((item) => <li>{item}</li>)}
+              </ul>
+            </section>
+
+            <section class="rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+              <h2
+                class="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-700 dark:text-yellow-300"
+                data-i18n="contactTitle"
+              >
+                {copy.es.contactTitle}
+              </h2>
+              <div class="mt-4 space-y-3 text-sm text-gray-700 dark:text-gray-300">
+                <p data-i18n="location">{copy.es.location}</p>
+                <a class="block hover:underline" href="mailto:facurael@gmail.com">
+                  facurael@gmail.com
+                </a>
+                <a
+                  class="block hover:underline"
+                  href="https://www.linkedin.com/in/facundo-nu%C3%B1ez-380b9b234/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  linkedin.com/in/facundo-nunez-380b9b234
+                </a>
+              </div>
+            </section>
+
+            <section class="rounded-[1.5rem] border border-black/5 bg-white p-5 dark:border-white/10 dark:bg-white/5">
+              <h2
+                class="text-sm font-semibold uppercase tracking-[0.2em] text-yellow-700 dark:text-yellow-300"
+                data-i18n="linksTitle"
+              >
+                {copy.es.linksTitle}
+              </h2>
+              <div class="mt-4 flex flex-wrap gap-3" data-print-hidden>
+                <LinkButton href="mailto:facurael@gmail.com">
+                  <MailIcon class="size-4" />
+                  Mail
+                </LinkButton>
+                <LinkButton
+                  href="https://www.linkedin.com/in/facundo-nu%C3%B1ez-380b9b234/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LinkedInIcon class="size-4" />
+                  LinkedIn
+                </LinkButton>
+              </div>
+              <p
+                class="mt-4 text-sm text-gray-600 dark:text-gray-400"
+                data-i18n="printNote"
+              >
+                {copy.es.printNote}
+              </p>
+            </section>
+          </aside>
+        </div>
+      </article>
+    </SectionContainer>
+  </main>
+
+  <script is:inline define:vars={{ copy }}>
+    const applyLanguage = (lang) => {
+      const nextLang = lang === "en" ? "en" : "es"
+
+      document.documentElement.setAttribute("data-cv-lang", nextLang)
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n")
+        if (!key) return
+        element.textContent = copy[nextLang][key]
+      })
+
+      document.querySelectorAll("[data-es][data-en]").forEach((element) => {
+        const value = element.getAttribute(`data-${nextLang}`)
+        if (value) {
+          element.textContent = value
+        }
+      })
+
+      document.querySelectorAll("[data-lang-button]").forEach((button) => {
+        const isActive = button.getAttribute("data-lang-button") === nextLang
+        button.setAttribute("aria-pressed", String(isActive))
+        button.classList.toggle("bg-white", isActive)
+        button.classList.toggle("text-gray-950", isActive)
+        button.classList.toggle("dark:bg-white", isActive)
+        button.classList.toggle("dark:text-gray-950", isActive)
+        button.classList.toggle("text-white", !isActive)
+        button.classList.toggle("dark:text-white", !isActive)
+      })
+    }
+
+    document.addEventListener("astro:page-load", () => {
+      const browserLang = navigator.language?.toLowerCase().startsWith("en") ? "en" : "es"
+      applyLanguage(browserLang)
+
+      document.querySelectorAll("[data-lang-button]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const nextLang = button.getAttribute("data-lang-button") ?? "es"
+          applyLanguage(nextLang)
+        })
+      })
+    })
+  </script>
+
+  <style is:global>
+    @media print {
+      header,
+      footer,
+      [data-print-hidden] {
+        display: none !important;
+      }
+
+      body {
+        background: white !important;
+      }
+    }
+  </style>
+</Layout>

@@ -1,0 +1,219 @@
+---
+import LinkButton from "./LinkButton.astro"
+import LinkedInIcon from "./icons/LinkedIn.astro"
+import MailIcon from "./icons/Mail.astro"
+---
+
+<div class="relative overflow-hidden rounded-[2rem] border border-black/5 bg-white/75 p-6 shadow-xl backdrop-blur dark:border-white/10 dark:bg-white/5 md:p-8">
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(250,204,21,0.22),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(14,165,233,0.14),transparent_35%)]"></div>
+
+  <div class="grid gap-8 xl:grid-cols-[1fr,1.05fr] xl:items-start">
+    <div>
+      <p class="text-sm font-medium uppercase tracking-[0.22em] text-yellow-700 dark:text-yellow-300">
+        Contacto
+      </p>
+
+      <h3 class="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+        Si tenés una idea, un producto en marcha o un equipo que necesita destrabarse, conversemos.
+      </h3>
+
+      <p class="mt-5 max-w-2xl text-lg leading-8 text-gray-700 dark:text-gray-300">
+        Me gusta sumarme a proyectos donde pueda aportar claridad técnica, buena ejecución
+        y foco en el resultado final. Trabajo cómodo tanto en sitios públicos como en sistemas
+        internos y productos que ya están en uso.
+      </p>
+
+      <div class="mt-7 flex flex-wrap gap-3">
+        <LinkButton href="mailto:facurael@gmail.com">
+          <MailIcon class="size-4" />
+          Escribirme por mail
+        </LinkButton>
+
+        <LinkButton
+          href="https://www.linkedin.com/in/facundo-nu%C3%B1ez-380b9b234/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <LinkedInIcon class="size-4" />
+          LinkedIn
+        </LinkButton>
+
+        <LinkButton href="/cv" target="_blank" rel="noopener noreferrer">
+          Ver CV
+        </LinkButton>
+      </div>
+
+      <div class="mt-8 grid gap-4">
+        <div class="rounded-[1.5rem] border border-black/5 bg-white/85 p-5 text-gray-900 dark:border-white/10 dark:bg-slate-900/70 dark:text-white">
+          <p class="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">Ideal para</p>
+          <ul class="mt-4 space-y-3 text-sm leading-6">
+            <li>Equipos que necesitan lanzar o mejorar un producto web.</li>
+            <li>Negocios que quieren digitalizar una operación real.</li>
+            <li>Proyectos que ya existen y necesitan orden, velocidad y mejores decisiones frontend/backend.</li>
+          </ul>
+        </div>
+
+        <div class="rounded-[1.5rem] border border-black/5 bg-white/85 p-5 dark:border-white/10 dark:bg-slate-900/70">
+          <p class="text-xs uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
+            Lo que suelo aportar
+          </p>
+          <ul class="mt-4 space-y-3 text-sm leading-6 text-gray-700 dark:text-gray-300">
+            <li>Interfaces claras, rápidas y enfocadas en uso real.</li>
+            <li>Implementación fullstack con criterio de producto.</li>
+            <li>Comunicación simple y ejecución responsable de punta a punta.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-[1.75rem] border border-black/5 bg-white/90 p-5 shadow-sm dark:border-white/10 dark:bg-slate-900/70">
+      <div class="flex flex-wrap items-start justify-between gap-3">
+        <div>
+          <div class="flex flex-wrap items-center gap-2">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500 dark:text-gray-400">
+              Mini formulario
+            </p>
+            <span class="rounded-full bg-yellow-100 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-yellow-900 dark:bg-yellow-300/15 dark:text-yellow-100">
+              Sin backend
+            </span>
+          </div>
+          <h4 class="mt-2 max-w-sm text-2xl font-semibold text-gray-900 dark:text-white">
+            Dejá el contexto y prepará un mensaje más claro
+          </h4>
+        </div>
+      </div>
+
+      <form id="contact-form" class="mt-6 grid gap-4">
+        <div class="grid gap-4 2xl:grid-cols-2">
+          <label class="grid min-w-0 gap-2">
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-200">Nombre</span>
+            <input
+              name="name"
+              type="text"
+              required
+              placeholder="Tu nombre"
+              class="w-full min-w-0 rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-yellow-500 dark:border-white/10 dark:bg-gray-950/70 dark:text-white dark:placeholder:text-gray-500 dark:[color-scheme:dark]"
+            />
+          </label>
+
+          <label class="grid min-w-0 gap-2">
+            <span class="text-sm font-medium text-gray-700 dark:text-gray-200">Email</span>
+            <input
+              name="email"
+              type="email"
+              required
+              placeholder="tunombre@email.com"
+              class="w-full min-w-0 rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-yellow-500 dark:border-white/10 dark:bg-gray-950/70 dark:text-white dark:placeholder:text-gray-500 dark:[color-scheme:dark]"
+            />
+          </label>
+        </div>
+
+        <label class="grid min-w-0 gap-2">
+          <span class="text-sm font-medium text-gray-700 dark:text-gray-200">Tipo de proyecto</span>
+          <div class="relative">
+            <select
+              name="projectType"
+              class="w-full appearance-none rounded-2xl border border-black/10 bg-white px-4 py-3 pr-12 text-sm text-gray-900 outline-none transition focus:border-yellow-500 dark:border-white/10 dark:bg-gray-950/70 dark:text-white dark:[color-scheme:dark]"
+            >
+              <option>Sitio institucional o landing</option>
+              <option>Producto web / SaaS</option>
+              <option>Sistema interno</option>
+              <option>Mejoras en producto existente</option>
+              <option>Otro</option>
+            </select>
+
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 20 20"
+              fill="none"
+              class="pointer-events-none absolute right-4 top-1/2 size-4 -translate-y-1/2 text-gray-500 dark:text-gray-300"
+            >
+              <path
+                d="m5 7.5 5 5 5-5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </label>
+
+        <label class="grid min-w-0 gap-2">
+          <span class="text-sm font-medium text-gray-700 dark:text-gray-200">Mensaje</span>
+          <textarea
+            name="message"
+            rows="6"
+            required
+            placeholder="Contame qué están construyendo, qué necesitan resolver y en qué etapa están."
+            class="w-full min-w-0 rounded-2xl border border-black/10 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition placeholder:text-gray-400 focus:border-yellow-500 dark:border-white/10 dark:bg-gray-950/70 dark:text-white dark:placeholder:text-gray-500 dark:[color-scheme:dark]"
+          ></textarea>
+        </label>
+
+        <div class="flex flex-wrap items-center gap-3">
+          <button
+            type="submit"
+            class="inline-flex max-w-fit items-center justify-center gap-2 rounded-xl border border-gray-900 bg-gray-950 px-4 py-3 text-sm font-semibold text-white transition hover:bg-black focus:outline-none focus-visible:ring focus-visible:ring-yellow-500/80 focus-visible:ring-offset-2 dark:border-white/15 dark:bg-white dark:text-gray-950 dark:hover:bg-gray-200"
+          >
+            Preparar mensaje
+          </button>
+
+          <p
+            id="contact-form-status"
+            class="max-w-xs text-sm text-gray-600 dark:text-gray-300"
+          >
+            Se abre tu cliente de correo con el mensaje ya armado.
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const form = document.getElementById("contact-form")
+    const status = document.getElementById("contact-form-status")
+
+    if (!(form instanceof HTMLFormElement) || !(status instanceof HTMLElement)) {
+      return
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault()
+
+      const formData = new FormData(form)
+      const name = String(formData.get("name") ?? "").trim()
+      const email = String(formData.get("email") ?? "").trim()
+      const projectType = String(formData.get("projectType") ?? "").trim()
+      const message = String(formData.get("message") ?? "").trim()
+
+      if (!name || !email || !message) {
+        status.textContent = "Completá nombre, email y mensaje para preparar el correo."
+        status.className = "max-w-xs text-sm text-red-600 dark:text-red-300"
+        return
+      }
+
+      const subject = encodeURIComponent(`Consulta desde portfolio - ${projectType}`)
+      const body = encodeURIComponent(
+        `Nombre: ${name}\nEmail: ${email}\nTipo de proyecto: ${projectType}\n\nMensaje:\n${message}`,
+      )
+
+      status.textContent = "Abriendo tu cliente de correo..."
+      status.className = "max-w-xs text-sm text-emerald-700 dark:text-emerald-300"
+      window.location.href = `mailto:facurael@gmail.com?subject=${subject}&body=${body}`
+    })
+  })
+</script>
+
+<style>
+  select option {
+    color: #111827;
+    background: #ffffff;
+  }
+
+  :global(.dark) select option {
+    color: #f8fafc;
+    background: #111827;
+  }
+</style>

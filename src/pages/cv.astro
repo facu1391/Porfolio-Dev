@@ -475,6 +475,7 @@ const stack = [
       body {
         background: white !important;
         color: #111827 !important;
+        font-size: 12px !important;
       }
 
       main {
@@ -500,12 +501,12 @@ const stack = [
         border-bottom: 1px solid rgba(15, 23, 42, 0.12) !important;
         background: white !important;
         color: #0f172a !important;
-        padding: 0 0 1rem !important;
+        padding: 0 0 0.75rem !important;
       }
 
       .cv-grid {
         display: block !important;
-        padding: 0.9rem 0 0 !important;
+        padding: 0.7rem 0 0 !important;
       }
 
       .cv-main,
@@ -516,25 +517,18 @@ const stack = [
       .cv-main > .cv-card,
       .cv-side > .cv-card {
         margin-top: 0 !important;
-        margin-bottom: 0.85rem !important;
+        margin-bottom: 0.65rem !important;
       }
 
       .cv-entry {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-
-      .cv-card h2,
-      .cv-card h3,
-      .cv-entry {
-        break-after: avoid;
-        page-break-after: avoid;
+        break-inside: auto;
+        page-break-inside: auto;
       }
 
       .cv-card {
         break-inside: auto;
         page-break-inside: auto;
-        margin-bottom: 0.85rem !important;
+        margin-bottom: 0.65rem !important;
         padding: 0 !important;
         border: none !important;
         border-radius: 0 !important;
@@ -545,6 +539,53 @@ const stack = [
       .cv-entry {
         border: 1px solid rgba(15, 23, 42, 0.08) !important;
         background: #f8fafc !important;
+        padding: 0.65rem !important;
+      }
+
+      .cv-sheet h1 {
+        margin-top: 0.35rem !important;
+        font-size: 2rem !important;
+        line-height: 1.05 !important;
+      }
+
+      .cv-sheet h2 {
+        margin: 0 0 0.35rem !important;
+        font-size: 0.72rem !important;
+        line-height: 1.2 !important;
+      }
+
+      .cv-sheet h3 {
+        font-size: 1rem !important;
+        line-height: 1.25 !important;
+      }
+
+      .cv-sheet p,
+      .cv-sheet li,
+      .cv-sheet a,
+      .cv-sheet span {
+        line-height: 1.45 !important;
+      }
+
+      .cv-sheet .mt-3 {
+        margin-top: 0.45rem !important;
+      }
+
+      .cv-sheet .mt-4,
+      .cv-sheet .mt-5,
+      .cv-sheet .mt-6 {
+        margin-top: 0.55rem !important;
+      }
+
+      .cv-sheet .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+        margin-top: 0.45rem !important;
+      }
+
+      .cv-sheet .space-y-4 > :not([hidden]) ~ :not([hidden]) {
+        margin-top: 0.55rem !important;
+      }
+
+      .cv-sheet .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+        margin-top: 0.65rem !important;
       }
 
       .cv-links {

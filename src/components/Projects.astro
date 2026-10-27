@@ -17,6 +17,7 @@ import TypeScript from "./icons/TypeScript.astro"
 import PostgresSQL from "./icons/PostgreSQL.astro"
 import Python from "./icons/Python.astro"
 import Shadcn from "./icons/Shadcn.astro"
+import ProjectGallery from "./ProjectGallery.astro"
 
 const TAGS = {
   TYPESCRIPT: {
@@ -107,7 +108,7 @@ const PROJECTS = [
     status: "Producto en uso",
     link: "",
     github: "",
-    image: "fomento-agua.png",
+    images: ["agua-01.webp", "agua-02.webp", "agua-03.webp", "agua-04.webp"],
     imageClass:
       "object-contain bg-[#0f1a24] p-3 dark:bg-[#0b141d]",
     featured: true,
@@ -152,7 +153,7 @@ const PROJECTS = [
     status: "Sistema en producción",
     link: "",
     github: "",
-    image: "patrimonio.png",
+    images: ["patrimonio-01.webp", "patrimonio-02.webp", "patrimonio-03.webp", "patrimonio-04.webp", "patrimonio-05.webp", "patrimonio-06.webp", "patrimonio-07.webp"],
     imageClass:
       "object-contain bg-slate-100 p-3 dark:bg-slate-950/60",
     featured: true,
@@ -164,6 +165,71 @@ const PROJECTS = [
       TAGS.PYTHON,
       TAGS.POSTGRES,
     ],
+  },
+  {
+    title: "Libro del Año",
+    description: "Sistema contable institucional para organizar el inventario anual de bienes, consultar movimientos y generar reportes patrimoniales.",
+    impact: "Centraliza la información de cada ejercicio y facilita el seguimiento de altas, bajas y saldos.",
+    role: "Desarrollo de producto fullstack",
+    status: "Sistema institucional",
+    link: "",
+    github: "",
+    images: ["libro-01.webp", "libro-02.webp", "libro-03.webp", "libro-04.webp"],
+    imageClass: "object-cover",
+    featured: true,
+    tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.POSTGRES],
+  },
+  {
+    title: "Portal interno de la Legislatura",
+    description: "Espacio privado para que los equipos de la Legislatura consulten documentos, novedades y gestiones internas.",
+    impact: "Reúne información institucional en una experiencia simple, protegida y accesible para el personal.",
+    role: "Diseño e implementación web",
+    status: "Portal institucional",
+    link: "",
+    github: "",
+    images: ["legislatura-01.webp"],
+    imageClass: "object-cover",
+    featured: true,
+    tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+  },
+  {
+    title: "Voto Seguro",
+    description: "Plataforma de gestión electoral con herramientas para organizar jornadas, padrones, asistencia y estructura territorial.",
+    impact: "Ofrece seguimiento operativo y trazabilidad de la información durante cada jornada electoral.",
+    role: "Desarrollo fullstack",
+    status: "Plataforma electoral",
+    link: "",
+    github: "",
+    images: ["voto-01.webp", "voto-02.webp", "voto-03.webp", "voto-04.webp", "voto-05.webp"],
+    imageClass: "object-cover",
+    featured: true,
+    tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND, TAGS.NODE, TAGS.POSTGRES],
+  },
+  {
+    title: "Portal municipal Castro Barros",
+    description: "Portal de información municipal con noticias, servicios, trámites y canales de atención ciudadana.",
+    impact: "Acerca información útil y servicios digitales a vecinos de las distintas localidades del departamento.",
+    role: "Diseño y desarrollo frontend",
+    status: "Portal institucional",
+    link: "",
+    github: "",
+    images: ["municipio-01.webp", "municipio-02.webp", "municipio-03.webp", "municipio-04.webp", "municipio-05.webp", "municipio-06.webp"],
+    imageClass: "object-cover",
+    featured: false,
+    tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
+  },
+  {
+    title: "Kobo Store",
+    description: "Experiencia de comercio electrónico para una tienda de indumentaria y calzado, con catálogo, marcas y filtros.",
+    impact: "Presenta productos y colecciones con una identidad visual cuidada y navegación adaptable a cada pantalla.",
+    role: "Diseño y desarrollo frontend",
+    status: "E-commerce",
+    link: "",
+    github: "",
+    images: ["kobo-01.webp", "kobo-02.webp", "kobo-03.webp"],
+    imageClass: "object-cover",
+    featured: false,
+    tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND],
   },
   {
     title: "Docya",
@@ -249,29 +315,23 @@ const PROJECTS = [
 
 const featuredProjects = PROJECTS.filter(({ featured }) => featured)
 const otherProjects = PROJECTS.filter(({ featured }) => !featured)
+const projectImages = ({ images, image }: { images?: string[]; image?: string }) => images ?? (image ? [image] : [])
 ---
 
 <div class="space-y-14">
   <div class="max-w-2xl">
     <p class="text-lg text-gray-700 dark:text-gray-300">
-      Seleccioné primero los trabajos que mejor muestran cómo pienso producto y cómo
-      llevo soluciones reales a producción.
+      Productos y sistemas que resuelven necesidades concretas: herramientas de gestión,
+      plataformas institucionales y experiencias de comercio digital.
     </p>
   </div>
 
   <div class="space-y-8">
     {
-      featuredProjects.map(({ image, imageClass, title, description, impact, role, status, tags, link, github }) => (
+      featuredProjects.map(({ image, images, title, description, impact, role, status, tags, link, github }) => (
         <article class="items-start grid gap-6 overflow-hidden rounded-[2rem] border border-black/5 bg-white/70 p-5 shadow-lg backdrop-blur transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/5 lg:grid-cols-[1.1fr,1fr]">
           <div class="self-start overflow-hidden rounded-[1.5rem] border border-black/5 bg-slate-100 dark:border-white/10 dark:bg-slate-950/60">
-            <div class="flex items-center justify-center">
-              <img
-                alt={`Captura del proyecto ${title}`}
-                class={`h-auto max-h-[420px] w-full ${imageClass}`}
-                loading="lazy"
-                src={`/${image}`}
-              />
-            </div>
+            <ProjectGallery images={projectImages({ images, image })} title={title} />
           </div>
 
           <div class="flex flex-col justify-between">
@@ -341,17 +401,10 @@ const otherProjects = PROJECTS.filter(({ featured }) => !featured)
 
     <div class="grid gap-6 md:grid-cols-2">
       {
-        otherProjects.map(({ image, imageClass, title, description, role, status, tags, link, github }) => (
+        otherProjects.map(({ image, images, title, description, role, status, tags, link, github }) => (
           <article class="flex h-full flex-col overflow-hidden rounded-[1.75rem] border border-black/5 bg-white/70 p-4 backdrop-blur transition hover:-translate-y-1 dark:border-white/10 dark:bg-white/5">
             <div class="overflow-hidden rounded-[1.25rem] border border-black/5 bg-slate-100 dark:border-white/10 dark:bg-slate-950/60">
-              <div class="flex items-center justify-center">
-                <img
-                  alt={`Captura del proyecto ${title}`}
-                  class={`h-auto max-h-[280px] w-full ${imageClass}`}
-                  loading="lazy"
-                  src={`/${image}`}
-                />
-              </div>
+              <ProjectGallery images={projectImages({ images, image })} title={title} compact />
             </div>
 
             <div class="flex flex-1 flex-col">
